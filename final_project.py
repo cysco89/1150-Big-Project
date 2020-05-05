@@ -1,6 +1,6 @@
 months = {'JAN': 10,
           'FEB': 20}
 
-for value in months:
-    print(value)
+for key in months:
+    print(key)
 
