@@ -41,6 +41,8 @@ final_project.add_page_break()
 
 # writing on the next page the first taco recipes,
 # to have this text appearing on top of second page, page brake must be entered!
+
+# this will be the first recipe that I would get from the URL taco recipe, which will be a random one.
 recipe_title1 = final_project.add_paragraph(f"A rich {taco_recipe1['seasoning']['name']} with {taco_recipe1['condiment']['name']}, "
                             f"{taco_recipe1['mixin']['name']}, {taco_recipe1['base_layer']['name']}"
                             f" in {taco_recipe1['shell']['name']}", 'Title')
