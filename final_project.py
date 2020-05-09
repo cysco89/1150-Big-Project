@@ -74,9 +74,10 @@ final_project.add_page_break()
 
 
 
-# starting from here, it will be all the same code and procedures.
-# The only thing that I change is the variable name from where I get the URL from, Notice the 'taco_recipe1' 'changed to taco_recipe2'
-
+# starting from here, it will be all the same code
+# The only thing that I changed is the variable name from where I get the URL from, Notice the 'taco_recipe1' 'changed to taco_recipe2'-
+# plus the 'recipe_title', which in this code will not do nothing since it is just an easy reading to where the next title starts.
+# the rest is all the same code! As well the page break
 recipe_title2 = final_project.add_paragraph(f"A rich {taco_recipe2['seasoning']['name']} with {taco_recipe2['condiment']['name']}, "
                             f"{taco_recipe2['mixin']['name']}, {taco_recipe2['base_layer']['name']}"
                             f" in {taco_recipe2['shell']['name']}", 'Title')
@@ -97,11 +98,9 @@ final_project.add_heading(f'{taco_recipe2["shell"]["name"]}')
 final_project.add_paragraph(f'{taco_recipe2["shell"]["recipe"]}')
 
 
-
-
 final_project.add_page_break()
 
-
+# Here starts the third and final recipe that will be printed out in my word document.
 recipe_title3 = final_project.add_paragraph(f"A rich {taco_recipe3['seasoning']['name']} with {taco_recipe3['condiment']['name']}, "
                             f"{taco_recipe3['mixin']['name']}, {taco_recipe3['base_layer']['name']}"
                             f" in {taco_recipe3['shell']['name']}", 'Title')
@@ -127,7 +126,7 @@ final_project.add_paragraph(f'{taco_recipe3["shell"]["recipe"]}')
 
 
 """ saving my Word Document """
-final_project.save('taco_recipe.docx')
+final_project.save('taco_recipe.docx') # to save the document, .save must be entered!
 
 
 
