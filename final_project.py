@@ -13,6 +13,7 @@ import docx
 url = 'https://taco-1150.herokuapp.com/random/?full_taco=true'
 
 # creating three variable names, otherwise I will end up getting duplicates of the recipes, One for each recipe.
+# these variable names I will use to get the taco recipes.
 taco_recipe1 = requests.get(url).json()
 taco_recipe2 = requests.get(url).json()
 taco_recipe3 = requests.get(url).json()
@@ -47,11 +48,14 @@ recipe_title1 = final_project.add_paragraph(f"A rich {taco_recipe1['seasoning'][
                             f"{taco_recipe1['mixin']['name']}, {taco_recipe1['base_layer']['name']}"
                             f" in {taco_recipe1['shell']['name']}", 'Title')
 
+# since each recipe has five procedures, in order to print out the whole recipe, it must be written out individually!
+# for easy reading the recipe, by adding a .add_heading it will print a heading style text to it,
 
-final_project.add_heading(f'{taco_recipe1["seasoning"]["name"]}')
-final_project.add_paragraph(f'{taco_recipe1["seasoning"]["recipe"]}')
+# whichever value for the key 'name', will also be shown on the page that will be applied with the heading style.
+final_project.add_heading(f'{taco_recipe1["seasoning"]["name"]}') # this 'name' key will match with the title that is above.
+final_project.add_paragraph(f'{taco_recipe1["seasoning"]["recipe"]}') # this will print out the whole recipe for 'seasoning'
 
-
+# for the rest is all the same, until I get to the final procedure of the recipe.
 final_project.add_heading(f'{taco_recipe1["condiment"]["name"]}')
 final_project.add_paragraph(f'{taco_recipe1["condiment"]["recipe"]}')
 
@@ -65,11 +69,13 @@ final_project.add_paragraph(f'{taco_recipe1["base_layer"]["recipe"]}')
 final_project.add_heading(f'{taco_recipe1["shell"]["name"]}')
 final_project.add_paragraph(f'{taco_recipe1["shell"]["recipe"]}')
 
-# Adding a page break for the next slide that will contain the next random taco recipe,
+# Once the whole recipe is in the pages printed out, I must a page break for the next slide that will contain the next random taco recipe,
 final_project.add_page_break()
 
 
 
+# starting from here, it will be all the same code and procedures.
+# The only thing that I change is the variable name from where I get the URL from, Notice the 'taco_recipe1' 'changed to taco_recipe2'
 
 recipe_title2 = final_project.add_paragraph(f"A rich {taco_recipe2['seasoning']['name']} with {taco_recipe2['condiment']['name']}, "
                             f"{taco_recipe2['mixin']['name']}, {taco_recipe2['base_layer']['name']}"
