@@ -18,7 +18,7 @@ taco_recipe1 = requests.get(url).json()
 taco_recipe2 = requests.get(url).json()
 taco_recipe3 = requests.get(url).json()
 
-# open word document in order to work on it,
+# open word document in order to work on it, and saving to a variable called 'final_project'
 final_project = docx.Document()
 
 # adding the main title of my word document, and applying the style 'title' so it appears on top of the page,
@@ -55,7 +55,7 @@ recipe_title1 = final_project.add_paragraph(f"A rich {taco_recipe1['seasoning'][
 final_project.add_heading(f'{taco_recipe1["seasoning"]["name"]}') # this 'name' key will match with the title that is above.
 final_project.add_paragraph(f'{taco_recipe1["seasoning"]["recipe"]}') # this will print out the whole recipe for 'seasoning'
 
-# for the rest is all the same, until I get to the final procedure of the recipe.
+# for the rest is all the same code, until I get to the final procedure of the recipe, which is 'shell'.
 final_project.add_heading(f'{taco_recipe1["condiment"]["name"]}')
 final_project.add_paragraph(f'{taco_recipe1["condiment"]["recipe"]}')
 
@@ -69,13 +69,13 @@ final_project.add_paragraph(f'{taco_recipe1["base_layer"]["recipe"]}')
 final_project.add_heading(f'{taco_recipe1["shell"]["name"]}')
 final_project.add_paragraph(f'{taco_recipe1["shell"]["recipe"]}')
 
-# Once the whole recipe is in the pages printed out, I must a page break for the next slide that will contain the next random taco recipe,
+# Once the whole recipe is in the pages printed out, I must add a page break for the next slide that will contain the next random taco recipe,
 final_project.add_page_break()
 
 
 
 # starting from here, it will be all the same code
-# The only thing that I changed is the variable name from where I get the URL from, Notice the 'taco_recipe1' 'changed to taco_recipe2'-
+# The only thing that that changes is the variable name from where I get the URL from, Notice the 'taco_recipe1' 'changed to taco_recipe2'-
 # plus the 'recipe_title', which in this code will not do nothing since it is just an easy reading to where the next title starts.
 # the rest is all the same code! As well the page break
 recipe_title2 = final_project.add_paragraph(f"A rich {taco_recipe2['seasoning']['name']} with {taco_recipe2['condiment']['name']}, "
@@ -96,11 +96,9 @@ final_project.add_paragraph(f'{taco_recipe2["base_layer"]["recipe"]}')
 
 final_project.add_heading(f'{taco_recipe2["shell"]["name"]}')
 final_project.add_paragraph(f'{taco_recipe2["shell"]["recipe"]}')
-
-
 final_project.add_page_break()
 
-# Here starts the third and final recipe that will be printed out in my word document.
+# Here starts the third and final recipe that will be printed out in the word document.
 recipe_title3 = final_project.add_paragraph(f"A rich {taco_recipe3['seasoning']['name']} with {taco_recipe3['condiment']['name']}, "
                             f"{taco_recipe3['mixin']['name']}, {taco_recipe3['base_layer']['name']}"
                             f" in {taco_recipe3['shell']['name']}", 'Title')
@@ -120,9 +118,6 @@ final_project.add_paragraph(f'{taco_recipe3["base_layer"]["recipe"]}')
 
 final_project.add_heading(f'{taco_recipe3["shell"]["name"]}')
 final_project.add_paragraph(f'{taco_recipe3["shell"]["recipe"]}')
-
-
-
 
 
 """ saving my Word Document """
